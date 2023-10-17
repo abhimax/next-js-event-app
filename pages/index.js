@@ -1,13 +1,10 @@
-import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
-
+import EventList from "@/components/EventList";
+import { getFeaturedEvents } from "@/dummy-data";
+const events = getFeaturedEvents();
 export default function Home() {
   return (
     <>
-      <h1>Home Page</h1>
+      <EventList events={events} />
     </>
   );
 }
