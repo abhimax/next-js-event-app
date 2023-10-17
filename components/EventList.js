@@ -1,12 +1,23 @@
 import EventItem from "./EventItem";
 
 function EventList({ events }) {
+  console.log(events);
   return (
-    <>
-      {events.map(() => {
-        return <EventItem />;
+    <ul>
+      {events.map((event) => {
+        return (
+          <EventItem
+            key={event.id}
+            id={event.id}
+            title={event.title}
+            description={event.description}
+            image={event.image}
+            location={event.location}
+            date={event.date}
+          />
+        );
       })}
-    </>
+    </ul>
   );
 }
 export default EventList;
