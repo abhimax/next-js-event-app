@@ -1,6 +1,11 @@
 import Link from "next/link";
 
 function EventItem({ id, title, image, location, date }) {
+  const humanReadableDate = new Date(date).toLocaleDateString("en-US", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
   return (
     <li>
       <img src={image} />
@@ -8,7 +13,7 @@ function EventItem({ id, title, image, location, date }) {
         <div>
           <h2>{title}</h2>
           <div>
-            <time>{date}</time>
+            <time>{humanReadableDate}</time>
           </div>
           <div>
             <address>{location}</address>
