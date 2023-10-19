@@ -6,6 +6,7 @@ function EventItem({ id, title, image, location, date }) {
     month: "long",
     year: "numeric",
   });
+  const formattedAddress = location.replace(", ", "\n");
   return (
     <li>
       <img src={image} />
@@ -16,11 +17,11 @@ function EventItem({ id, title, image, location, date }) {
             <time>{humanReadableDate}</time>
           </div>
           <div>
-            <address>{location}</address>
+            <address>{formattedAddress}</address>
           </div>
         </div>
         <div>
-          <Link href={`events/${id}`}></Link>
+          <Link href={`events/${id}`}>Explore Event</Link>
         </div>
       </div>
     </li>
