@@ -1,5 +1,6 @@
 import Link from "next/link";
 import classes from "./EventItem.module.css";
+import Button from "../button/Button";
 
 function EventItem({ id, title, image, location, date }) {
   const humanReadableDate = new Date(date).toLocaleDateString("en-US", {
@@ -21,8 +22,8 @@ function EventItem({ id, title, image, location, date }) {
             <address>{formattedAddress}</address>
           </div>
         </div>
-        <div className={classes.action}>
-          <Link href={`events/${id}`}>Explore Event</Link>
+        <div className={classes.actions}>
+          <Button link={`events/${id}`}>Explore Event</Button>
         </div>
       </div>
     </li>
