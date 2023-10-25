@@ -1,17 +1,18 @@
 import Button from "../button/Button";
+import classes from "./EventSearch.module.css";
 
 function EventSearch(props) {
   return (
-    <form>
-      <div>
-        <div>
+    <form className={classes.form}>
+      <div className={classes.controls}>
+        <div className={classes.control}>
           <label htmlFor="year">Year</label>
           <select id="year">
             <option value="2021">2021</option>
             <option value="2022">2022</option>
           </select>
         </div>
-        <div>
+        <div className={classes.control}>
           <label htmlFor="month">Year</label>
           <select id="month">
             <option value="January">January</option>
