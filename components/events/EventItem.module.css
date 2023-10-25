@@ -20,6 +20,9 @@
   padding: 0 1rem;
   text-align: center;
 }
+.summary {
+  padding-right: 30px;
+}
 
 .content h2 {
   margin: 0.5rem 0;
@@ -47,7 +50,6 @@
 .content address {
   margin: 0.5rem 0;
   color: #666666;
-  white-space: pre;
 }
 
 .actions {
