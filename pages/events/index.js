@@ -5,9 +5,12 @@ import { getAllEvents } from "@/dummy-data";
 
 function AllEvent() {
   const events = getAllEvents();
+  const onEventFilterHandler = (data) => {
+    console.log(data);
+  };
   return (
     <>
-      <EventSearch />
+      <EventSearch onEventFilter={onEventFilterHandler} />
       <EventList events={events} />
     </>
   );
