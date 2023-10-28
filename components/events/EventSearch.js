@@ -2,8 +2,12 @@ import Button from "../button/Button";
 import classes from "./EventSearch.module.css";
 
 function EventSearch(props) {
+  const searchHandler = (event) => {
+    event.preventDefault();
+    console.log("submit data");
+  };
   return (
-    <form className={classes.form}>
+    <form className={classes.form} onSubmit={searchHandler}>
       <div className={classes.controls}>
         <div className={classes.control}>
           <label htmlFor="year">Year</label>
@@ -30,7 +34,7 @@ function EventSearch(props) {
           </select>
         </div>
       </div>
-      <Button link={""}>Find Events</Button>
+      <button type="submit">Search</button>
     </form>
   );
 }
