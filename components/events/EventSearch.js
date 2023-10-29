@@ -18,7 +18,7 @@ function EventSearch({ onEventFilter }) {
           <label htmlFor="year">Year</label>
           <select id="year" ref={yearRef}>
             <option value="2022">2022</option>
-            <option value="2023 ">2023</option>
+            <option value="2023">2023</option>
           </select>
         </div>
         <div className={classes.control}>
