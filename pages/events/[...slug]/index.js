@@ -10,6 +10,17 @@ function FilteredEvent() {
   const filteredYear = +filteredData[0];
   const filteredMonth = +filteredData[1];
 
+  if (
+    isNaN(filteredYear) ||
+    isNaN(filteredMonth) ||
+    filteredYear > 2023 ||
+    filteredYear < 2022 ||
+    filteredMonth > 12 ||
+    filteredMonth < 1
+  ) {
+    return <p className="center">Invalid filter. Please adjust your values!</p>;
+  }
+
   console.log(filteredData, filteredYear, filteredMonth);
 
   const filteredEvent = getFilteredEvents({
