@@ -1,3 +1,5 @@
+import EventList from "@/components/events/EventList";
+import ResultsTitle from "@/components/events/ResultsTitle";
 import { getFilteredEvents } from "@/dummy-data";
 import { useRouter } from "next/router";
 
@@ -27,7 +29,18 @@ function FilteredEvent() {
     year: filteredYear,
     month: filteredMonth,
   });
-  console.log(filteredEvent);
-  return <div>Filtered Event</div>;
+
+  if (!filteredEvent || filteredEvent.length === 0) {
+    return (
+      <p className="center">No events found found for the chosen filter!</p>
+    );
+  }
+  const date = new Date(filteredYear, filteredMonth - 1);
+  return (
+    <>
+      <ResultsTitle date={date} />
+      <EventList events={filteredEvent} />
+    </>
+  );
 }
 export default FilteredEvent;
