@@ -1,3 +1,5 @@
+import Button from "@/components/button/Button";
+import ErrorAlert from "@/components/events/ErrorAlert";
 import EventList from "@/components/events/EventList";
 import ResultsTitle from "@/components/events/ResultsTitle";
 import { getFilteredEvents } from "@/dummy-data";
@@ -20,7 +22,17 @@ function FilteredEvent() {
     filteredMonth > 12 ||
     filteredMonth < 1
   ) {
-    return <p className="center">Invalid filter. Please adjust your values!</p>;
+    return (
+      <>
+        <ErrorAlert>
+          <p className="center">Invalid filter. Please adjust your values!</p>
+        </ErrorAlert>
+
+        <div className="center">
+          <Button link={"/events"}>Show All Events</Button>
+        </div>
+      </>
+    );
   }
 
   console.log(filteredData, filteredYear, filteredMonth);
@@ -32,7 +44,15 @@ function FilteredEvent() {
 
   if (!filteredEvent || filteredEvent.length === 0) {
     return (
-      <p className="center">No events found found for the chosen filter!</p>
+      <>
+        <ErrorAlert>
+          <p className="center">No events found found for the chosen filter!</p>
+        </ErrorAlert>
+
+        <div className="center">
+          <Button link={"/events"}>Show All Events</Button>
+        </div>
+      </>
     );
   }
   const date = new Date(filteredYear, filteredMonth - 1);
